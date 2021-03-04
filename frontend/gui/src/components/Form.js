@@ -20,22 +20,24 @@ class CustomForm extends React.Component {
                     title: title,
                     content: content
                 })
-                    .then(res => console.log(res))
-                    .catch(error => console.log(error));
+                    .then(res => console.log(res));
+
             case 'put':
                 axios.put(`http://127.0.0.1:8000/api/${articleID}/`, {
                     title: title,
                     content: content
                 })
-                    .then(res => console.log(res))
-                    .catch(error => console.err(error));
+                    .then(res => console.log(res));
+
+
         }
+
     }
 
     render() {
         return (
             <div>
-                <Form onSubmit=
+                <form onSubmit=
                     {(event) => this.handleFormSubmit(
                         event,
                         this.props.requestType,
@@ -53,7 +55,7 @@ class CustomForm extends React.Component {
                     <Form.Item >
                         <Button type="primary" htmlType="submit">{this.props.btnText}</Button>
                     </Form.Item>
-                </Form>
+                </form>
             </div>
         );
     }
