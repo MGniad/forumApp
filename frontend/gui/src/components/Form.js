@@ -28,13 +28,13 @@ class CustomForm extends React.Component {
                     content: content
                 })
                     .then(res => console.log(res))
-                    .catch(error => console.log(error));
+                    .catch(error => console.err(error));
         }
     }
 
     render() {
         return (
-            <>
+            <div>
                 <Form onSubmit=
                     {(event) => this.handleFormSubmit(
                         event,
@@ -54,7 +54,7 @@ class CustomForm extends React.Component {
                         <Button type="primary" htmlType="submit">{this.props.btnText}</Button>
                     </Form.Item>
                 </Form>
-            </>
+            </div>
         );
     }
 
